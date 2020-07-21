@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .color-box{
+            background-color: limegreen;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button class="event-button">Click me!</button>
+    <script>
+        const button = document.querySelector('.event-button');
+        button.addEventListener('click', function() {
+            alert("Hey There!");
+        });
+
+    </script> -->
+    <!-- <input placeholder="type into me!" class="input-to-copy" />
+    <p class="p-to-copy-to">Nothing has happened yet.</p>
+    <script>
+        const input = document.querySelector(".input-to-copy");
+        const paragraph = document.querySelector(".p-to-copy-to");
+        // there is also keydown which will miss the last one character
+        input.addEventListener("keyup", function() {
+            paragraph.innerText = input.value;
+        });
+    </script> -->
+    <!-- <div class="color-box"></div>
+    <input placeholder="type a color here" class="color-input">
+    <script>
+        const input = document.querySelector(".color-input");
+        const paragraph = document.querySelector(".color-box");
+
+        input.addEventListener("change", function() {
+            paragraph.style.backgroundColor = input.value;
+        })
+    </script> -->
+
+    <!-- Event Delegation -->
+
+    <div class="button-container">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div>
+    <script>
+        document.querySelector(".button-container").addEventListener("click", function(event) {
+            if (event.target.tagName === "BUTTON") {
+                alert(`You clicked on button ${event.target.innerText}`);
+                event.target.innerText = "CLICKED";
+            }
+        })
+    </script>
+</body>
+</html>
